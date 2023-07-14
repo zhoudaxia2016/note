@@ -1,0 +1,13 @@
+# 代码引入node_modules下的没编译成commonjs的包，jest构建失败
+
+## 原因
+jest是运行在node环境下的，node应该还没完全支持es6 module
+所以配置了jest的moduleNameMapper，让原来引用es6 module的地方替换成commonjs包
+
+因为这样写死了路径，又导致一个问题：可能会出现包版本不一致的情况。这就得涉及到
+node模块加载步骤了。
+
+所以最终，通过配置transformIgnorePatterns，让jest babel处理node_modules下的es6 module
+
+原则上，不应该引用node_modules下的未编译为commonjs的包的，因为有些环境是不会再对
+node_modules下的模块编译处理。
