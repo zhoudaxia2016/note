@@ -1,0 +1,27 @@
+[note]
+template = "default.md"
+
+[format.markdown]
+hashtags = true
+colon-tags = true
+multiword-tags = true
+
+[tool]
+editor = "nvim"
+
+[lsp.diagnostics]
+dead-link = "error"
+
+[group.daily]
+
+[group.daily.note]
+filename = "{{format-date now '%Y-%m-%d'}}"
+template = "daily.md"
+
+[alias]
+d = 'zk new daily --no-input'
+c = 'nvim "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
+l = 'zk list --interactive $@'
+m = 'zk list --interactive --match $@'
+t = 'zk list --interactive --tag $@'
+lt = 'zk tag list'
