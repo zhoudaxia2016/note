@@ -37,3 +37,5 @@ inspector.open()
 inspector.waitForDebugger()
 
 ```
+
+:chrome:node:debug:

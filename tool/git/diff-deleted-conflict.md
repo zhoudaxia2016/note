@@ -36,3 +36,5 @@ diff命令也可以换成difftool，直接用编辑器查看，会更清晰
 这样我们不能通过上面的命令来diff了，因为结果肯定为空(我们已经merge了，merge-base肯定已经包含目标分支的commit)
 
 我们可以找到merge的那个commit，找到merge的两个commit，它们即是我们merge时的两个commit，可以替代上面命令的两个分支。
+
+:git:
