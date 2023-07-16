@@ -10,7 +10,7 @@ multiword-tags = true
 editor = "nvim"
 
 [lsp.diagnostics]
-dead-link = "error"
+dead-link = "none"
 
 [group.daily]
 
