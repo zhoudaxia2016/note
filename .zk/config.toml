@@ -1,4 +1,5 @@
 [note]
+filename = "{{title}}"
 template = "default.md"
 
 [format.markdown]
@@ -18,6 +19,12 @@ dead-link = "none"
 filename = "{{format-date now '%Y-%m-%d'}}"
 template = "daily.md"
 
+[group."work/career"]
+
+[group."work/career".note]
+filename = "{{slug title}}"
+template = "career.md"
+
 [alias]
 d = 'zk new daily --no-input'
 c = 'nvim "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
@@ -25,3 +32,4 @@ l = 'zk list --interactive $@'
 m = 'zk list --interactive --match $@'
 t = 'zk list --interactive --tag $@'
 lt = 'zk tag list'
+ca = 'zk new --title="$@" work/career'
