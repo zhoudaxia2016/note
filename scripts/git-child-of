@@ -1,0 +1,14 @@
+#!/bin/bash -e
+# given a commit, find immediate children of that commit.
+# ---
+# git log --format="%H %P --all"
+# 列出所有commit，每个commit显示"commitid parent-commitid"
+# ---
+# grep -F " $@"
+# 搜索以$@作为parent的那一行
+# ---
+# cut -f1 -d ' '
+# 取第一个字段，合起来就是取移$@作为parent的那个一个commitid
+for child in $(git log --format='%H %P' --all | grep -F " $@" | cut -f1 -d' '); do
+  git describe $child
+done
