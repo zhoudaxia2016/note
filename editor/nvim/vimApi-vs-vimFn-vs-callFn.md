@@ -1,4 +1,4 @@
-# vim.api vs vim.fn
+# vim.api vs vim.fn vs call fn
 
 它们之前区别是？下面通过源码来分析它们区别。
 
@@ -91,9 +91,9 @@ erfunc.c:1718
 - nvim有个事件循环，时刻监听用户按键。
 - 无论是执行vim旧函数还是nvim的api，都会通过先执行cmdline的方法，因为它们都是cmd命令。
 - vim旧函数执行，会在一个工具生成的文件里找到对应函数，然后执行。
-- vim的api有一个lua executor，通过lua api执行函数。
+- vim的api有一个lua executor，通过lua api执行函数，也有一个工具生成的文件存着所有nvim api。
 - lua里执行vim.fn，会先走lua executor，再走旧函数的执行。
-- 其实除了执行流程，它们机会没有区别，都是c代码。
+- 其实除了执行流程，它们基本没有区别，都是c代码。
 
 后续可以研究：
 - 怎么生成nvim的api和vim旧方法的？
