@@ -19,6 +19,12 @@ dead-link = "none"
 filename = "{{format-date now '%Y-%m-%d'}}"
 template = "daily.md"
 
+[group."work/career/daily"]
+
+[group."work/career/daily".note]
+filename = "{{format-date now '%Y-%m-%d'}}"
+template = "daily.md"
+
 [group."work/career"]
 
 [group."work/career".note]
@@ -33,3 +39,5 @@ m = 'zk list --interactive --match $@'
 t = 'zk list --interactive --tag $@'
 lt = 'zk tag list'
 ca = 'zk new --title="$@" work/career'
+wd = 'zk new work/career/daily'
+w = 'zk list work/career/daily "$@" -i'
