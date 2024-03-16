@@ -51,6 +51,16 @@ DZ60V2是在 keyboards/dztech/dz60v2/keymaps/default/
 
 大功告成
 
+## 具体keymap改动
+- capslock改成ctrl
+- 按住F，然后按vim方向键（hjkl），作为方向键。用LT(layer, key)实现
+LT含义：按住key则打开layer层，tap则触发key
+- 分裂的第三个空格作为Fn键
+- 右shift的右边的key切换mac和win。mac和win不同
+  - win: 左下是win，alt
+  - mac: 相同位置是option，command
+  切换系统时按一下这个key，就会切换上面两个键
+
 ## faq
 - 改了keymap文件，刷固件不生效
 https://docs.qmk.fm/#/faq_keymap?id=my-keymap-doesnt-update-when-i-flash-it
